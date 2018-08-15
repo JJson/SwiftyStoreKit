@@ -74,7 +74,7 @@ public class SwiftyStoreKit {
         })
     }
 
-    fileprivate func restorePurchases(atomically: Bool = true, applicationUsername: String = "", completion: @escaping (RestoreResults) -> Void) {
+    fileprivate func restorePurchases(atomically: Bool = true, applicationUsername: String? = nil, completion: @escaping (RestoreResults) -> Void) {
 
         paymentQueueController.restorePurchases(RestorePurchases(atomically: atomically, applicationUsername: applicationUsername) { results in
 
@@ -183,7 +183,7 @@ extension SwiftyStoreKit {
      *  - Parameter applicationUsername: an opaque identifier for the user’s account on your system
      *  - Parameter completion: handler for result
      */
-    public class func restorePurchases(atomically: Bool = true, applicationUsername: String = "", completion: @escaping (RestoreResults) -> Void) {
+    public class func restorePurchases(atomically: Bool = true, applicationUsername: String? = nil, completion: @escaping (RestoreResults) -> Void) {
 
         sharedInstance.restorePurchases(atomically: atomically, applicationUsername: applicationUsername, completion: completion)
     }

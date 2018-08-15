@@ -33,6 +33,7 @@ public struct Purchase {
     public let transaction: PaymentTransaction
     public let originalTransaction: PaymentTransaction?
     public let needsFinishTransaction: Bool
+    public let originalPayment: SKPayment?
 }
 
 // Purchased product
@@ -43,6 +44,7 @@ public struct PurchaseDetails {
     public let transaction: PaymentTransaction
     public let originalTransaction: PaymentTransaction?
     public let needsFinishTransaction: Bool
+    public let originalPayment: SKPayment
 }
 
 //Conform to this protocol to provide custom receipt validator
